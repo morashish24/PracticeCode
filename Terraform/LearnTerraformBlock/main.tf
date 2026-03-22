@@ -43,7 +43,7 @@ resource "aws_instance" "my_ec2_instance" {
   }
 }
 
-*/
+/*
 # S3 Bucket
 resource "aws_s3_bucket" "my_s3_bucket" {
   bucket = "my-terraform-state-bucket-am12351"  # MUST be globally unique
@@ -52,7 +52,7 @@ resource "aws_s3_bucket" "my_s3_bucket" {
     Name = "MyS3Bucket"
   }
 }
-/*
+*/
 # Output
 output "bucket_name" {
   value = aws_s3_bucket.my_s3_bucket.bucket
