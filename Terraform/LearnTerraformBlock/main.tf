@@ -58,9 +58,10 @@ resource "aws_s3_bucket" "my_s3_bucket" {
 output "bucket_name" {
   value = aws_s3_bucket.my_s3_bucket.bucket
 }
-
+*/
 output "ec2_public_ip" {
+
+  count = 3
   value =  aws_instance.my_ec2_instance[count.index]
 }
 
-*/
