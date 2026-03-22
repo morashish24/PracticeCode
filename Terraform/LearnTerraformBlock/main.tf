@@ -37,6 +37,7 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "my_ec2_instance" {
   instance_type = "t2.micro"
   ami           = data.aws_ami.amazon_linux.id
+  count = 3
 
   tags = {
     Name = "MyEC2Instance"
