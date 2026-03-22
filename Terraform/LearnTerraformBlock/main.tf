@@ -8,15 +8,13 @@ terraform {
     }
   }
 
-/*
   backend "s3" {
-    bucket         = "my-terraform-state-bucket"   # change this (must be unique & already created)
+    bucket         = "my-terraform-state-bucket-am12351"   # change this (must be unique & already created)
     key            = "ec2/terraform.tfstate"
     region         = "us-west-2"
     dynamodb_table = "terraform-lock"              # change if needed (must exist)
     profile        = "default"
   }
-*/
 }
 
 provider "aws" {
