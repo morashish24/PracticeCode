@@ -8,6 +8,7 @@ terraform {
     }
   }
 
+/*
   backend "s3" {
     bucket         = "my-terraform-state-bucket"   # change this (must be unique & already created)
     key            = "ec2/terraform.tfstate"
@@ -15,6 +16,7 @@ terraform {
     dynamodb_table = "terraform-lock"              # change if needed (must exist)
     profile        = "default"
   }
+*/
 }
 
 provider "aws" {
