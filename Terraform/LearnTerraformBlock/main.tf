@@ -12,7 +12,6 @@ terraform {
     bucket         = "my-terraform-state-bucket-am12351"   # change this (must be unique & already created)
     key            = "ec2/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-lock"              # change if needed (must exist)
     profile        = "default"
   }
 }
