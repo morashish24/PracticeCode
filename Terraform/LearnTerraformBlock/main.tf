@@ -48,7 +48,7 @@ resource "aws_instance" "my_ec2_instance" {
 
 # S3 Bucket
 resource "aws_s3_bucket" "my_s3_bucket" {
-  bucket = "my-unique-s3-bucket-12345"  # MUST be globally unique
+  bucket = "my-terraform-state-bucket-am12351"  # MUST be globally unique
 
   tags = {
     Name = "MyS3Bucket"
