@@ -19,3 +19,7 @@ resource "aws_subnet" "public_subnet_2" {
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
 }
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.eks_vpc.id
+}
