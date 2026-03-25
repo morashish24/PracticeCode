@@ -15,4 +15,8 @@ resource "aws_eks_node_group" "node_group" {
   }
 
   instance_types = ["t2.micro"]
+
+  tags = {
+    Name = "EKS-Node"
+  }
 }
