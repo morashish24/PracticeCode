@@ -16,22 +16,5 @@ resource "aws_eks_node_group" "node_group" {
 
   instance_types = ["t2.micro"]
 
-  launch_template {
-    id      = aws_launch_template.eks_lt.id
-    version = "$Latest"
-  }
 }
 
-resource "aws_launch_template" "eks_lt" {
-  name_prefix   = "eks-node-"
-  image_id      = data.aws_ami.amazon_linux.id
-  instance_type = "t3.medium"
-
-  tag_specifications {
-    resource_type = "instance"
-
-    tags = {
-      Name = "EKS-Worker-Node"
-    }
-  }
-}
