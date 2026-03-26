@@ -48,7 +48,7 @@ resource "aws_security_group" "jenkins_sg" {
 # EC2 Instance
 resource "aws_instance" "jenkins_server" {
   ami           = data.aws_ami.amazon_linux.id
-  instance_type = "t2.micro"  # Free tier
+  instance_type = "t2.medium"  # Free tier
 
   security_groups = [aws_security_group.jenkins_sg.name]
 
