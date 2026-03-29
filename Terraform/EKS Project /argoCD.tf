@@ -30,6 +30,7 @@ resource "helm_release" "argocd" {
 }
 
 data "aws_eks_cluster" "eks" {
+  depends_on = [aws_eks_cluster.eks]
   name = "my-eks-cluster"
 }
 data "aws_eks_cluster_auth" "eks" {
