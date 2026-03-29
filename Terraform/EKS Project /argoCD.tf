@@ -3,3 +3,16 @@ resource "kubernetes_namespace_v1" "argocd" {
     name = "argocd"
   }
 }
+
+resource "helm_release" "argocd" {
+  name       = "argocd"
+  namespace  = "argocd"
+
+  repository = "https://argoproj.github.io/argo-helm"
+  chart      = "argo-cd"
+
+  set {
+    name  = "server.service.type"
+    value = "LoadBalancer"
+  }
+}
