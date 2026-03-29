@@ -14,6 +14,10 @@ provider "helm" {
   }
 }
 
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
 resource "helm_release" "argocd" {
   name       = "argocd"
   namespace  = "argocd"
@@ -45,4 +49,6 @@ provider "kubernetes" {
   )
 
   token = data.aws_eks_cluster_auth.eks.token
+
+  depends_on= [aws_eks_cluster.eks]
 }
