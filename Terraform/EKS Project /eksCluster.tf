@@ -9,6 +9,9 @@ resource "aws_eks_cluster" "eks" {
     }
 }
 
+data "aws_eks_cluster" "eks" {
+  name = "my-eks-cluster"
+}
 data "aws_eks_cluster_auth" "eks" {
   name = "my-eks-cluster"
 }
